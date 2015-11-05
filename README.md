@@ -727,7 +727,6 @@ HTTP/1.1 404 Not Found
 | お支払期限   | billing[due_date]          | |
 | 売上計上日   | billing[sales_date]        | |
 | メモ         | billing[memo]              | |
-| 振込先       | billing[payment_condition] | |
 | 帳票名       | billing[document_name]     | |
 | 品目1 名前   | items[0][name]             | |
 | 品目1 コード | items[0][code]             | |
@@ -771,7 +770,6 @@ HTTP/1.1 201 Created
   "memo" : "",
   "payment_condition" : "",
   "total_price" : "1080",
-  "payment_condition" : "",
   "billing_date" : "2015/10/31",
   "due_date" : "2015/11/30",
   "sales_date" : "2015/10/31",
@@ -829,7 +827,6 @@ department_idが不正であった場合
 | お支払期限   | billing[due_date]          | |
 | 売上計上日   | billing[sales_date]        | |
 | メモ         | billing[memo]              | |
-| 振込先       | billing[payment_condition] | |
 | 帳票名       | billing[document_name]     | |
 | 品目1 名前   | items[0][name]             | |
 | 品目1 コード | items[0][code]             | |
@@ -873,7 +870,6 @@ HTTP/1.1 200 OK
   "memo" : "",
   "payment_condition" : "",
   "total_price" : "1080",
-  "payment_condition" : "",
   "billing_date" : "2015/10/31",
   "due_date" : "2015/11/30",
   "sales_date" : "2015/10/31",
