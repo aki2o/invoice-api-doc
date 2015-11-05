@@ -243,23 +243,23 @@ HTTP/1.1 200 OK
 ```
 
 #### パラメーター
-| 名称             | field                 | 備考 |
-| :--              | :--                   | :--|
-| 顧客コード       | partner[code]         | |
-| 名前             | partner[name]         | 必須 |
-| 名前（カナ）     | partner[name_kana]    | |
-| 敬称             | partner[name_suffix]  | |
-| メモ             | partner[memo]         | | |
-| 郵便番号         | partner[zip]          | |
-| 電話番号         | partner[tel]          | |
-| 都道府県         | partner[prefecture]   | 必須 |
-| 住所1            | partner[address1]     | |
-| 住所2            | partner[address2]     | |
-| 担当者氏名       | partner[person_name]  | |
-| 担当者役職       | partner[person_title] | |
-| 部門名           | partner[name]         | |
-| メールアドレス   | partner[email]        | |
-| ccメールアドレス | partner[cc_emails]    | カンマ区切りで複数入力可 |
+| 名称             | field                    | 備考 |
+| :--              | :--                      | :--|
+| 顧客コード       | partner[code]            | |
+| 名前             | partner[name]            | 必須 |
+| 名前（カナ）     | partner[name_kana]       | |
+| 敬称             | partner[name_suffix]     | |
+| メモ             | partner[memo]            | | |
+| 郵便番号         | partner[zip]             | |
+| 電話番号         | partner[tel]             | |
+| 都道府県         | partner[prefecture]      | 必須 |
+| 住所1            | partner[address1]        | |
+| 住所2            | partner[address2]        | |
+| 担当者氏名       | partner[person_name]     | |
+| 担当者役職       | partner[person_title]    | |
+| 部門名           | partner[department_name] | |
+| メールアドレス   | partner[email]           | |
+| ccメールアドレス | partner[cc_emails]       | カンマ区切りで複数入力可 |
 
 #### リクエスト例
 ```
