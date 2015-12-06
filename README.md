@@ -1,5 +1,15 @@
 # MFクラウド請求書APIドキュメント
 
+## プランごとの利用制限について
+どのプランでも下記制限の中でAPIを利用することができます。
+
+| プラン     | 請求書作成リクエスト上限 |
+| :--        | --:                      |
+| Free       | 100                      |
+| Basic      | 100                      |
+| Pro        | なし                     |
+| Enterprise | なし                     |
+
 ## 認証について
 アプリケーションの認証はOAuth2.0のAuthorization Code Grantにもとづいて行います。
 
@@ -252,7 +262,7 @@ HTTP/1.1 200 OK
 | メモ             | partner[memo]            | | |
 | 郵便番号         | partner[zip]             | |
 | 電話番号         | partner[tel]             | |
-| 都道府県         | partner[prefecture]      | 必須 |
+| 都道府県         | partner[prefecture]      | 入力なしの場合、東京都 |
 | 住所1            | partner[address1]        | |
 | 住所2            | partner[address2]        | |
 | 担当者氏名       | partner[person_name]     | |
@@ -263,7 +273,7 @@ HTTP/1.1 200 OK
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "partner" : { "name" : "サンプル取引先" }}' -X POST https://invoice.moneyforward.com/api/v1/partners
+url -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "partner" : { "name" : "サンプル取引先", "code" : "ABCD-00001" }}' -X POST https://invoice.moneyforward.com/api/v1/partners
 ```
 
 #### レスポンス
@@ -710,7 +720,7 @@ HTTP/1.1 404 Not Found
 }
 ```
 
-## 請求書の作成
+### 請求書の作成
 ```
   POST /api/v1/billings
 ```
@@ -744,6 +754,27 @@ HTTP/1.1 404 Not Found
 #### リクエスト例
 ```
 curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "billing" : { "department_id" : "DEPARTMENT_ID" }}' -X POST https://invoice.moneyforward.com/api/v1/billings
+
+# 品目を含むリクエスト
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" \
+-d '
+{
+  "billing" : {
+    "department_id" : "DEPARTMENT_ID",
+      "items" : [
+        {
+          "name" : "商品A",
+          "quantity" : "1",
+          "unit_price" : "100"
+        },
+        # 登録した品目を利用する場合
+        {
+          "code" : "登録済み品目コード"
+        }
+      ]
+  }
+} '
+-X POST https://invoice.moneyforward.com/api/v1/billings
 ```
 
 #### レスポンス
@@ -844,6 +875,36 @@ department_idが不正であった場合
 #### リクエスト例
 ```
 curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "billing" : { "title" : "件名サンプル" }}' -X PATCH https://invoice.moneyforward.com/api/v1/billings/ABCDEFGHIJKLMNOPQRST123
+
+# 品目を含むリクエスト
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" \
+-d '
+{
+  "billing" : {
+    "department_id" : "DEPARTMENT_ID",
+      "items" : [
+        # itemの追加(idなし)
+        {
+          "name" : "商品C",
+          "quantity" : "1",
+          "unit_price" : "100"
+        },
+        # itemの更新(idあり)
+        {
+          "id" : "ABCDEFGHIJKLMNOPQRST012"
+          "name" : "商品B",
+          "quantity" : "1",
+          "unit_price" : "100"
+        },
+        # itemの更新(削除)
+        {
+          "id" : "ABCDEFGHIJKLMNOPQRST012"
+          "_destroy" : true
+        },
+      ]
+  }
+} '
+-X PATCH https://invoice.moneyforward.com/api/v1/billings/"更新する請求書ID"
 ```
 
 #### レスポンス
@@ -1035,7 +1096,7 @@ HTTP/1.1 200 OK
   "items": [
     {
       "id" : "ABCDEFGHIJKLMNOPQRST123",
-      "item_code" : "ITEM-001",
+      "code" : "ITEM-001",
       "name" : "サンプル商品",
       "detail" : "",
       "unit_price" : "1000",
@@ -1067,7 +1128,7 @@ HTTP/1.1 200 OK
 ```
 {
   "id" : "ABCDEFGHIJKLMNOPQRST123",
-  "item_code" : "ITEM-001",
+  "code" : "ITEM-001",
   "name" : "サンプル商品",
   "detail" : "",
   "unit_price" : "1000",
@@ -1106,7 +1167,7 @@ HTTP/1.1 201 Created
 {
   "id" : "ABCDEFGHIJKLMNOPQRST123",
   "name" : "サンプル商品",
-  "item_code" : "ITEM-001",
+  "code" : "ITEM-001",
   "detail" : "",
   "unit_price" : "1000",
   "unit" : "個",
@@ -1156,7 +1217,7 @@ HTTP/1.1 200 OK
 {
   "id" : "ABCDEFGHIJKLMNOPQRST123",
   "name" : "サンプル商品2",
-  "item_code" : "ITEM-001",
+  "code" : "ITEM-001",
   "detail" : "",
   "unit_price" : "1000",
   "unit" : "個",
