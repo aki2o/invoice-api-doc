@@ -36,6 +36,10 @@ curl -d client_id=[CLIENT_ID] -d client_secret=[CLIENT_SECRET] -d redirect_uri=[
 * Basicプラン以下のプランをご利用の場合、月のAPI経由での請求書作成数を100件までとさせていただきます。
 * その他、取引先登録数や郵送の可否等は通常のプランごとの制限と同様* となります。
 
+## クライアントライブラリ
+
+* [Ruby](https://github.com/moneyforward/mf_cloud-invoice-ruby)
+
 ## 事業所情報API
 ### エンドポイント
 ```
@@ -181,8 +185,8 @@ HTTP/1.1 200 OK
       "name_kana" : "サンプルトリヒキサキ",
       "name_suffix" : "様",
       "memo" : "",
-      "created_at" : "2015/10/31 00:00:00",
-      "updated_at" : "2015/10/31 00:00:00",
+      "created_at" : "2015/10/31T00:00:00.000+09:00",
+      "updated_at" : "2015/10/31T00:00:00.000+09:00",
       "departments" : [
         {
           "id" : "ABCDEFGHIJKLMNOPQRST012",
@@ -196,6 +200,8 @@ HTTP/1.1 200 OK
           "person_name" : "サンプル太郎",
           "email" : "sample@example.com",
           "cc_emails" : "sample@example.com, sample2@example.com"
+          "created_at" : "2015/10/31T00:00:00.000+09:00",
+          "updated_at" : "2015/10/31T00:00:00.000+09:00"
         }
       ]
     }
@@ -227,8 +233,8 @@ HTTP/1.1 200 OK
   "name_kana" : "サンプルトリヒキサキ",
   "name_suffix" : "様",
   "memo" : "",
-  "created_at" : "2015/10/31 00:00:00",
-  "updated_at" : "2015/10/31 00:00:00",
+  "created_at" : "2015/10/31T00:00:00.000+09:00",
+  "updated_at" : "2015/10/31T00:00:00.000+09:00",
   "departments" : [
     {
       "id" : "ABCDEFGHIJKLMNOPQRST012",
@@ -241,7 +247,9 @@ HTTP/1.1 200 OK
       "person_title" : "部長",
       "person_name" : "サンプル太郎",
       "email" : "sample@example.com",
-      "cc_emails" : "sample@example.com, sample2@example.com"
+      "cc_emails" : "sample@example.com, sample2@example.com",
+      "created_at" : "2015/10/31T00:00:00.000+09:00",
+      "updated_at" : "2015/10/31T00:00:00.000+09:00"
     }
   ]
 }
@@ -288,8 +296,8 @@ HTTP/1.1 201 Created
   "name_kana" : "サンプルトリヒキサキ",
   "name_suffix" : "様",
   "memo" : "",
-  "created_at" : "2015/10/31 00:00:00",
-  "updated_at" : "2015/10/31 00:00:00",
+  "created_at" : "2015/10/31T00:00:00.000+09:00",
+  "updated_at" : "2015/10/31T00:00:00.000+09:00",
   "departments" : [
     {
       "id" : "ABCDEFGHIJKLMNOPQRST012",
@@ -302,7 +310,9 @@ HTTP/1.1 201 Created
       "person_title" : "部長",
       "person_name" : "サンプル太郎",
       "email" : "sample@example.com",
-      "cc_emails" : "sample@example.com, sample2@example.com"
+      "cc_emails" : "sample@example.com, sample2@example.com",
+      "created_at" : "2015/10/31T00:00:00.000+09:00",
+      "updated_at" : "2015/10/31T00:00:00.000+09:00"
     }
   ]
 }
@@ -328,24 +338,24 @@ HTTP/1.1 422 Unprocessable Entity
 ```
 
 #### パラメーター
-| 名称             | field                       | 備考 |
-| :--              | :--                         | :--|
-| 顧客コード       | partner[code]               | |
-| 名前             | partner[name]               | |
-| 名前（カナ）     | partner[name_kana]          | |
-| 敬称             | partner[name_suffix]        | |
-| メモ             | partner[memo]               | |
-| 部門ID           | department[0][id]           | departmentの値を更新する場合は必須 |
-| 郵便番号         | department[0][zip]          | |
-| 電話番号         | department[0][tel]          | |
-| 都道府県         | department[0][prefecture]   | |
-| 住所1            | department[0][address1]     | |
-| 住所2            | department[0][address2]     | |
-| 担当者氏名       | department[0][person_name]  | |
-| 担当者役職       | department[0][person_title] | |
-| 部門名           | department[0][name]         | |
-| メールアドレス   | department[0][email]        | |
-| ccメールアドレス | department[0][cc_emails]    | |
+| 名称             | field                                 | 備考 |
+| :--              | :--                                   | :--|
+| 顧客コード       | partner[code]                         | |
+| 名前             | partner[name]                         | |
+| 名前（カナ）     | partner[name_kana]                    | |
+| 敬称             | partner[name_suffix]                  | |
+| メモ             | partner[memo]                         | |
+| 部門ID           | partner[departments][0][id]           | departmentの値を更新する場合は必須 |
+| 郵便番号         | partner[departments][0][zip]          | |
+| 電話番号         | partner[departments][0][tel]          | |
+| 都道府県         | partner[departments][0][prefecture]   | |
+| 住所1            | partner[departments][0][address1]     | |
+| 住所2            | partner[departments][0][address2]     | |
+| 担当者氏名       | partner[departments][0][person_name]  | |
+| 担当者役職       | partner[departments][0][person_title] | |
+| 部門名           | partner[departments][0][name]         | |
+| メールアドレス   | partner[departments][0][email]        | |
+| ccメールアドレス | partner[departments][0][cc_emails]    | |
 
 #### リクエスト例
 ```
@@ -363,8 +373,8 @@ HTTP/1.1 200 OK
   "name_kana" : "サンプルトリヒキサキ",
   "name_suffix" : "様",
   "memo" : "",
-  "created_at" : "2015/10/31 00:00:00",
-  "updated_at" : "2015/10/31 00:00:00",
+  "created_at" : "2015/10/31T00:00:00.000+09:00",
+  "updated_at" : "2015/10/31T00:00:00.000+09:00",
   "departments" : [
     {
       "id" : "ABCDEFGHIJKLMNOPQRST012",
@@ -377,7 +387,9 @@ HTTP/1.1 200 OK
       "person_title" : "部長",
       "person_name" : "サンプル太郎",
       "email" : "sample@example.com",
-      "cc_emails" : "sample@example.com, sample2@example.com"
+      "cc_emails" : "sample@example.com, sample2@example.com",
+      "created_at" : "2015/10/31T00:00:00.000+09:00",
+      "updated_at" : "2015/10/31T00:00:00.000+09:00"
     }
   ]
 }
@@ -477,21 +489,24 @@ HTTP/1.1 200 OK
       "office_name" : "サンプル事業所",
       "office_detail" : "",
       "title" : "件名サンプル",
-      "excise_price" : "80",
-      "deduct_price" : "0",
-      "subtotal" : "1000",
+      "excise_price" : 80,
+      "deduct_price" : 0,
+      "subtotal" : 1000,
       "memo" : "",
       "payment_condition" : "",
-      "total_price" : "1080",
-      "payment_condition" : "",
+      "total_price" : 1080,
       "billing_date" : "2015/10/31",
       "due_date" : "2015/11/30",
       "sales_date" : "2015/10/31",
-      "created_at" : "2015/10/31 00:00:00",
-      "updated_at" : "2015/10/31 00:00:00",
+      "created_at" : "2015/10/31T00:00:00.000+09:00",
+      "updated_at" : "2015/10/31T00:00:00.000+09:00",
       "billing_number": "1",
       "note": "",
       "document_name": "",
+      "tags": [
+        "tag1",
+        "tag2"
+      ],
       "status" : {
         "posting" : "未郵送",
         "email" : "未送信",
@@ -504,11 +519,14 @@ HTTP/1.1 200 OK
           "code" : "ITEM-001",
           "name" : "商品A",
           "detail" : "",
-          "quantity" : "1",
-          "unit_price" : "1000",
+          "quantity" : 1,
+          "unit_price" : 1000,
           "unit" : "個",
-          "price" : "1000",
-          "display_order" : "0"
+          "price" : 1000,
+          "display_order" : 0,
+          "excise": true,
+          "created_at" : "2015/10/31T00:00:00.000+09:00",
+          "updated_at" : "2015/10/31T00:00:00.000+09:00"
         }
       ]
     }
@@ -567,21 +585,25 @@ HTTP/1.1 200 OK
       "office_name" : "サンプル事業所",
       "office_detail" : "",
       "title" : "件名サンプル",
-      "excise_price" : "80",
-      "deduct_price" : "0",
-      "subtotal" : "1000",
+      "excise_price" : 80,
+      "deduct_price" : 0,
+      "subtotal" : 1000,
       "memo" : "",
       "payment_condition" : "",
-      "total_price" : "1080",
+      "total_price" : 1080,
       "payment_condition" : "",
       "billing_date" : "2015/10/31",
       "due_date" : "2015/11/30",
       "sales_date" : "2015/10/31",
-      "created_at" : "2015/10/31 00:00:00",
-      "updated_at" : "2015/10/31 00:00:00",
+      "created_at" : "2015/10/31T00:00:00.000+09:00",
+      "updated_at" : "2015/10/31T00:00:00.000+09:00",
       "billing_number" : "1",
       "note" : "",
       "document_name" : "",
+      "tags": [
+        "tag1",
+        "tag2"
+      ],
       "status" : {
         "posting" : "未郵送",
         "email" : "未送信",
@@ -594,11 +616,14 @@ HTTP/1.1 200 OK
           "code" : "ITEM-001",
           "name" : "商品A",
           "detail" : "",
-          "quantity" : "1",
-          "unit_price" : "1000",
+          "quantity" : 1,
+          "unit_price" : 1000,
           "unit" : "個",
-          "price" : "1000",
-          "display_order" : "0"
+          "price" : 1000,
+          "excise": true,
+          "display_order" : 0,
+          "created_at" : "2015/10/31T00:00:00.000+09:00",
+          "updated_at" : "2015/10/31T00:00:00.000+09:00"
         }
       ]
     }
@@ -637,21 +662,25 @@ HTTP/1.1 200 OK
   "office_name" : "サンプル事業所",
   "office_detail" : "",
   "title" : "件名サンプル",
-  "excise_price" : "80",
-  "deduct_price" : "0",
-  "subtotal" : "1000",
+  "excise_price" : 80,
+  "deduct_price" : 0,
+  "subtotal" : 1000,
   "memo" : "",
   "payment_condition" : "",
-  "total_price" : "1080",
+  "total_price" : 1080,
   "payment_condition" : "",
   "billing_date" : "2015/10/31",
   "due_date" : "2015/11/30",
   "sales_date" : "2015/10/31",
-  "created_at" : "2015/10/31 00:00:00",
-  "updated_at" : "2015/10/31 00:00:00",
+  "created_at" : "2015/10/31T00:00:00.000+09:00",
+  "updated_at" : "2015/10/31T00:00:00.000+09:00",
   "billing_number" : "1",
   "note" : "",
   "document_name" : "",
+  "tags": [
+    "tag1",
+    "tag2"
+  ],
   "status" : {
     "posting" : "未郵送",
     "email" : "未送信",
@@ -664,11 +693,14 @@ HTTP/1.1 200 OK
       "name" : "商品A",
       "code" : "ITEM-001",
       "detail" : "",
-      "quantity" : "1",
-      "unit_price" : "1000",
+      "quantity" : 1,
+      "unit_price" : 1000,
       "unit" : "個",
-      "price" : "1000",
-      "display_order" : "0"
+      "price" : 1000,
+      "excise": true,
+      "display_order" : 0,
+      "created_at" : "2015/10/31T00:00:00.000+09:00",
+      "updated_at" : "2015/10/31T00:00:00.000+09:00"
     }
   ]
 }
@@ -738,18 +770,21 @@ HTTP/1.1 404 Not Found
 | 売上計上日   | billing[sales_date]        | |
 | メモ         | billing[memo]              | |
 | 帳票名       | billing[document_name]     | |
+| タグ         | billing[tags]              | カンマ区切り文字列で記載 |
 | 品目1 名前   | items[0][name]             | |
 | 品目1 コード | items[0][code]             | |
 | 品目1 詳細   | items[0][detail]           | |
 | 品目1 数量   | items[0][quantity]         | |
 | 品目1 単価   | items[0][unit_price]       | |
 | 品目1 単位   | items[0][unit]             | |
+| 品目1 税対象 | items[0][excise]           | 0: false  1: true |
 | 品目2 名前   | items[1][name]             | |
 | 品目2 コード | items[1][code]             | |
 | 品目2 詳細   | items[1][detail]           | |
 | 品目2 数量   | items[1][quantity]         | |
 | 品目2 単価   | items[1][unit_price]       | |
 | 品目2 単位   | items[1][unit]             | |
+| 品目2 税対象 | items[1][excise]           | 0: false  1: true |
 
 #### リクエスト例
 ```
@@ -775,8 +810,25 @@ curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/
   }
 } '
 -X POST https://invoice.moneyforward.com/api/v1/billings
-```
 
+# タグを含むリクエスト
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" \
+-d '
+{
+  "billing" : {
+    "department_id" : "DEPARTMENT_ID",
+      "items" : [
+        {
+          "name" : "商品A",
+          "quantity" : "1",
+          "unit_price" : "100"
+        }
+      ],
+    "tags" : "tag1,tag2" # カンマ区切り文字列で入力
+  }
+} '
+-X POST https://invoice.moneyforward.com/api/v1/billings
+```
 #### レスポンス
 ```
 HTTP/1.1 201 Created
@@ -795,20 +847,24 @@ HTTP/1.1 201 Created
   "office_name" : "サンプル事業所",
   "office_detail" : "",
   "title" : "件名サンプル",
-  "excise_price" : "80",
-  "deduct_price" : "0",
-  "subtotal" : "1000",
+  "excise_price" : 80,
+  "deduct_price" : 0,
+  "subtotal" : 1000,
   "memo" : "",
   "payment_condition" : "",
-  "total_price" : "1080",
+  "total_price" : 1080,
   "billing_date" : "2015/10/31",
   "due_date" : "2015/11/30",
   "sales_date" : "2015/10/31",
-  "created_at" : "2015/10/31 00:00:00",
-  "updated_at" : "2015/10/31 00:00:00",
+  "created_at" : "2015/10/31T00:00:00.000+09:00",
+  "updated_at" : "2015/10/31T00:00:00.000+09:00",
   "billing_number" : "1",
   "note" : "",
   "document_name" : "",
+  "tags": [
+    "tag1",
+    "tag2"
+  ],
   "status" : {
     "posting" : "未郵送",
     "email" : "未送信",
@@ -820,10 +876,14 @@ HTTP/1.1 201 Created
       "id" : "ABCDEFGHIJKLMNOPQRST012",
       "name" : "商品A",
       "detail" : "",
-      "quantity" : "1",
-      "unit_price" : "1000",
+      "quantity" : 1,
+      "unit_price" : 1000,
       "unit" : "個",
-      "price" : "1000"
+      "price" : 1000
+      "excise": true,
+      "display_order" : 0,
+      "created_at" : "2015/10/31T00:00:00.000+09:00",
+      "updated_at" : "2015/10/31T00:00:00.000+09:00"
     }
   ]
 }
@@ -859,18 +919,21 @@ department_idが不正であった場合
 | 売上計上日   | billing[sales_date]        | |
 | メモ         | billing[memo]              | |
 | 帳票名       | billing[document_name]     | |
+| タグ         | billing[tags]              | カンマ区切り文字列で記載 |
 | 品目1 名前   | items[0][name]             | |
 | 品目1 コード | items[0][code]             | |
 | 品目1 詳細   | items[0][detail]           | |
 | 品目1 数量   | items[0][quantity]         | |
 | 品目1 単価   | items[0][unit_price]       | |
 | 品目1 単位   | items[0][unit]             | |
+| 品目1 税対象 | items[0][excise]           | 0: false  1: true |
 | 品目2 名前   | items[1][name]             | |
 | 品目2 コード | items[1][code]             | |
 | 品目2 詳細   | items[1][detail]           | |
 | 品目2 数量   | items[1][quantity]         | |
 | 品目2 単価   | items[1][unit_price]       | |
 | 品目2 単位   | items[1][unit]             | |
+| 品目2 税対象 | items[1][excise]           | 0: false  1: true |
 
 #### リクエスト例
 ```
@@ -925,20 +988,24 @@ HTTP/1.1 200 OK
   "office_name" : "サンプル事業所",
   "office_detail" : "",
   "title" : "件名サンプル",
-  "excise_price" : "80",
-  "deduct_price" : "0",
-  "subtotal" : "1000",
+  "excise_price" : 80,
+  "deduct_price" : 0,
+  "subtotal" : 1000,
   "memo" : "",
   "payment_condition" : "",
-  "total_price" : "1080",
+  "total_price" : 1080,
   "billing_date" : "2015/10/31",
   "due_date" : "2015/11/30",
   "sales_date" : "2015/10/31",
-  "created_at" : "2015/10/31 00:00:00",
-  "updated_at" : "2015/10/31 00:00:00",
+  "created_at" : "2015/10/31T00:00:00.000+09:00",
+  "updated_at" : "2015/10/31T00:00:00.000+09:00",
   "billing_number" : "1",
   "note" : "",
   "document_name" : "",
+  "tags": [
+    "tag1",
+    "tag2"
+  ],
   "status" : {
     "posting" : "未郵送",
     "email" : "未送信",
@@ -951,11 +1018,14 @@ HTTP/1.1 200 OK
       "code" : "ITEM-001",
       "name" : "商品A",
       "detail" : "",
-      "quantity" : "1",
-      "unit_price" : "1000",
+      "quantity" : 1,
+      "unit_price" : 1000,
       "unit" : "個",
-      "price" : "1000",
-      "display_order" : "0"
+      "price" : 1000,
+      "excise": true,
+      "display_order" : 0,
+      "created_at" : "2015/10/31T00:00:00.000+09:00",
+      "updated_at" : "2015/10/31T00:00:00.000+09:00"
     }
   ]
 }
@@ -1099,11 +1169,13 @@ HTTP/1.1 200 OK
       "code" : "ITEM-001",
       "name" : "サンプル商品",
       "detail" : "",
-      "unit_price" : "1000",
+      "unit_price" : 1000,
       "unit" : "個",
-      "quantity" : "1",
-      "price" : "1000",
-      "excise" : "true"
+      "quantity" : 1,
+      "price" : 1000,
+      "excise" : true,
+      "created_at" : "2015/10/31T00:00:00.000+09:00",
+      "updated_at" : "2015/10/31T00:00:00.000+09:00"
     }
   ]
 }
@@ -1131,11 +1203,13 @@ HTTP/1.1 200 OK
   "code" : "ITEM-001",
   "name" : "サンプル商品",
   "detail" : "",
-  "unit_price" : "1000",
+  "unit_price" : 1000,
   "unit" : "個",
-  "quantity" : "1",
-  "price" : "1000",
-  "excise" : "true"
+  "quantity" : 1,
+  "price" : 1000,
+  "excise" : true,
+  "created_at" : "2015/10/31T00:00:00.000+09:00",
+  "updated_at" : "2015/10/31T00:00:00.000+09:00"
 }
 ```
 
@@ -1153,7 +1227,7 @@ HTTP/1.1 200 OK
 | 単価               | item[unit_price] | |
 | 単位               | item[unit]       | |
 | 数量               | item[quantity]   | |
-| 消費税を計算するか | item[excise]     | |
+| 消費税を計算するか | item[excise]     | 0: false  1: true |
 
 #### リクエスト例
 ```
@@ -1169,11 +1243,13 @@ HTTP/1.1 201 Created
   "name" : "サンプル商品",
   "code" : "ITEM-001",
   "detail" : "",
-  "unit_price" : "1000",
+  "unit_price" : 1000,
   "unit" : "個",
-  "quantity" : "1",
-  "price" : "1000",
-  "excise" : true
+  "quantity" : 1,
+  "price" : 1000,
+  "excise" : true,
+  "created_at" : "2015/10/31T00:00:00.000+09:00",
+  "updated_at" : "2015/10/31T00:00:00.000+09:00"
 }
 ```
 
@@ -1203,7 +1279,7 @@ HTTP/1.1 201 Created
 | 単価               | item[unit_price] | |
 | 単位               | item[unit]       | |
 | 数量               | item[quantity]   | |
-| 消費税を計算するか | item[excise]     | |
+| 消費税を計算するか | item[excise]     | 0: false  1: true |
 
 ### リクエスト例
 ```
@@ -1219,11 +1295,13 @@ HTTP/1.1 200 OK
   "name" : "サンプル商品2",
   "code" : "ITEM-001",
   "detail" : "",
-  "unit_price" : "1000",
+  "unit_price" : 1000,
   "unit" : "個",
-  "quantity" : "1",
-  "price" : "1000",
-  "excise" : true
+  "quantity" : 1,
+  "price" : 1000,
+  "excise" : true,
+  "created_at" : "2015/10/31T00:00:00.000+09:00",
+  "updated_at" : "2015/10/31T00:00:00.000+09:00"
 }
 ```
 
