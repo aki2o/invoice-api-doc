@@ -14,7 +14,7 @@
 アプリケーションの認証はOAuth2.0のAuthorization Code Grantにもとづいて行います。
 
 ### アプリケーションの登録
-* 画面右上の「？」のアイコンをクリックし、そこからAPI連携を選びます
+* https://invoice.moneyforward.com/ にアクセスして画面右上の設定アイコンをクリックし、そこからAPI連携を選びます
 * 新規作成ボタンをクリックし、フォームに必要な情報を入力し、利用規約に同意する、にチェックを入れて作成ボタンをクリックします
 * Client IDとClient Secretが発行されます
  redirect_uri は https のみ許可しています。
