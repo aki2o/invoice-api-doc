@@ -33,7 +33,7 @@ curl -d client_id=[CLIENT_ID] -d client_secret=[CLIENT_SECRET] -d redirect_uri=[
 ※リクエストを送る際、下記2点について注意して下さい。
 
 * パラメータは `Content-Type: application/x-www-form-urlencoded` にする
-* `Accept: application/json` ヘッダーが必要
+* クライアントによっては `Accept: application/json` ヘッダーの明示が必要
 
 ## アクセス数の制限について
 * Basicプラン以下のプランをご利用の場合、月のAPI経由での請求書作成数を100件までとさせていただきます。
