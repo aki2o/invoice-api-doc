@@ -30,7 +30,10 @@ https://invoice.moneyforward.com/oauth/authorize?client_id=[CLIENT_ID]&redirect_
 curl -d client_id=[CLIENT_ID] -d client_secret=[CLIENT_SECRET] -d redirect_uri=[REDIRECT_URL] -d grant_type=authorization_code -d code=[認証コード] -X POST https://invoice.moneyforward.com/oauth/token
 ```
 
-※リクエストを送る際にパラメータは'Content-Type: application/x-www-form-urlencoded'である必要がある点に注意してください。
+※リクエストを送る際、下記2点について注意して下さい。
+
+* パラメータは `Content-Type: application/x-www-form-urlencoded` にする
+* クライアントによっては `Accept: application/json` ヘッダーの明示が必要
 
 ## アクセス数の制限について
 * Basicプラン以下のプランをご利用の場合、月のAPI経由での請求書作成数を100件までとさせていただきます。
