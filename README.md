@@ -180,7 +180,7 @@ HTTP/1.1 200 OK
     "current_page" : 1,
     "per_page" : 10,
   },
-  "partners" [
+  "partners" : [
     {
       "id" : "ABCDEFGHIJKLMNOPQRST123",
       "code" : "ABCD-00001",
