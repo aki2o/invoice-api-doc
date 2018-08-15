@@ -1054,9 +1054,9 @@ HTTP/1.1 404 Not Found
   PATCH /api/v1/billings/:id/billing_status/payment
 ```
 #### パラメーター
-| 名称           | field                   | 備考                                              |
-| :--            | :--                     | :--                                               |
-| 入金ステータス | billing_status[payment] | 必須, '0': 未設定, '1': '未入金', '2': '入金済み' |
+| 名称           | field                   | 必須 or 任意 | 備考                                        |
+| :--            | :--                     | :--          | :--                                         |
+| 入金ステータス | billing_status[payment] | 必須         | '0': 未設定, '1': '未入金', '2': '入金済み' |
 
 #### リクエスト例
 ```
