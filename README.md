@@ -35,6 +35,11 @@ curl -d client_id=[CLIENT_ID] -d client_secret=[CLIENT_SECRET] -d redirect_uri=[
 * パラメータは `Content-Type: application/x-www-form-urlencoded` にする
 * クライアントによっては `Accept: application/json` ヘッダーの明示が必要
 
+### アクセストークンの再発行
+
+発行されたアクセストークンの有効期限は、30日間です。
+期限切れアクセストークンの再発行については[MFクラウド請求書API スタートアップガイド](https://support.biz.moneyforward.com/invoice/guide/api-guide/a01.html)に記載していますのでそちらをご覧ください。
+
 ## アクセス数の制限について
 * Basicプラン以下のプランをご利用の場合、月のAPI経由での請求書作成数を100件までとさせていただきます。
 * その他、取引先登録数や郵送の可否等は通常のプランごとの制限と同様* となります。
