@@ -6,7 +6,13 @@ POST   /api/v2/quotes.json
 
 #### detail
 
-Freeプラン、Basicプランの場合、月100件まで作成可能
+
+| プラン     | 請求書作成リクエスト上限 |
+| :--        | --:                      |
+| Free       | 月100件まで              |
+| Basic      | 月100件まで              |
+| Pro        | なし                     |
+| Enterprise | なし                     |
 
 #### params
 
