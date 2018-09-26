@@ -1526,3 +1526,18 @@ HTTP/1.1 200 OK
   ]
 }
 ```
+
+## 見積書API(v2)
+
+**（注）見積書APIはv2です**
+
+- [一覧](/quotes/index.md)
+- [取得](/quotes/show.md)
+- [作成](/quotes/create.md)
+- [更新](/quotes/update.md)
+- [削除](/quotes/destroy.md)
+- [検索](/quotes/search.md)
+- [ステータス変更](/quotes/status.md)
+- [郵送](/quotes/post.md)
+- [郵送キャンセル](/quotes/cancel_post.md)
+- [請求書に変換](/quotes/convert.md)
