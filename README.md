@@ -1522,7 +1522,10 @@ HTTP/1.1 200 OK
 }
 ```
 
-## 見積書API
+## 見積書API(v2)
+
+**（注）見積書APIはv2です**
+
 - [一覧](/quotes/index.md)
 - [取得](/quotes/show.md)
 - [作成](/quotes/create.md)
