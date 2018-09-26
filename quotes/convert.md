@@ -25,8 +25,3 @@ HTTP/1.1 200 OK
 ```
 { data: { type: :billing, id: iv_billing.encrypted_id } }, status: :ok
 ```
-##### failure
-
-```
-TODO: が
-```

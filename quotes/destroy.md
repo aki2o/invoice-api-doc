@@ -23,8 +23,3 @@ curl -X DELETE "https://invoice.moneyforward.com/api/v2/quotes/asdfghjkl.json" -
 HTTP/1.1 200 OK
 
 (headers only)
-
-##### failure
-```
-TODO: がん
-```

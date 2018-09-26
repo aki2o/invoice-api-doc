@@ -28,6 +28,17 @@ HTTP/1.1 200 OK
 [quotes.json](/responses/quotes.json)
 
 ##### failure
+HTTP/1.1 400 Bad Request
+
 ```
-TODO: 頑張る
+{
+  "errors": [
+    {
+      "status": "400",
+      "code": "210",
+      "title": "Bad request",
+      "detail": "per_page <= 100 である必要があります。"
+    }
+  ]
+}
 ```
