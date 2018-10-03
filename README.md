@@ -4,6 +4,8 @@
 |version|link|
 |:--:|:--:|
 |v1|https://github.com/nishisuke/invoice-api-doc/tree/v1|
+|v2|[here](https://github.com/nishisuke/invoice-api-doc/)|
+# TODO: replace nishisuke to mf
 
 ## Resources
 - [見積書](/quotes)
