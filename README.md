@@ -1,19 +1,24 @@
 # MFクラウド請求書APIドキュメント
-## versions
+このページは **v2** のドキュメントです。
+
+## バージョン
 
 |version|link|
 |:--:|:--:|
 |v1|https://github.com/nishisuke/invoice-api-doc/tree/v1|
 |v2|[here](https://github.com/nishisuke/invoice-api-doc/)|
-# TODO: replace nishisuke to mf
 
-## Resources
-- [見積書](/quotes)
+TODO: replace nishisuke to mf
+
+## リソース
 - [事業所](/office)
 - [取引先](/partners)
 - [品目](/items)
 - [請求書](/billings)
 - [送付履歴](/sent_histories)
+- [見積書](/quotes)
+
+＊ *見積書はv2から利用可能になりました。*
 
 ## プランごとの利用制限について
 どのプランでも下記制限の中でAPIを利用することができます。
