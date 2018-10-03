@@ -1,0 +1,10 @@
+## 請求書
+- [一覧](/billings/index.md)
+- [取得](/billings/show.md)
+- [作成](/billings/create.md)
+- [更新](/billings/update.md)
+- [削除](/billings/destroy.md)
+- [検索](/billings/search.md)
+- [ステータス変更](/billings/status.md)
+- [郵送](/billings/post.md)
+- [郵送キャンセル](/billings/cancel_post.md)
