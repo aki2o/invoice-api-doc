@@ -17,25 +17,4 @@ curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" "https://invoice.moneyforward.
 #### レスポンス
 HTTP/1.1 200 OK
 
-```
-{
-  "meta": {
-    "total_count" : 1,
-    "total_pages" : 1,
-    "current_page" : 1,
-    "per_page" : 10
-  },
-  "sent_history_list": [
-    {
-      "operator_id":  "ABCDEFGHIJKLMNOP",
-      "type": "メール",
-      "document_type": "請求書",
-      "document_id": "ABCDEFGHIJKLMNOP",
-      "from": "",
-      "to": "sample@moneyforward.co.jp",
-      "cc": "",
-      "sent_at": "2015-05-15T11:40:44.000+09:00"
-    }
-  ]
-}
-```
+[sent_histories.json](./responses/sent_histories.json)
