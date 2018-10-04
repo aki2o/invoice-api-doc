@@ -20,23 +20,9 @@ curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/
 ```
 
 #### レスポンス
-```
 HTTP/1.1 201 Created
 
-{
-  "id" : "ABCDEFGHIJKLMNOPQRST123",
-  "name" : "サンプル商品",
-  "code" : "ITEM-001",
-  "detail" : "",
-  "unit_price" : 1000,
-  "unit" : "個",
-  "quantity" : 1,
-  "price" : 1000,
-  "excise" : true,
-  "created_at" : "2015/10/31T00:00:00.000+09:00",
-  "updated_at" : "2015/10/31T00:00:00.000+09:00"
-}
-```
+[item.json](./responses/item.json)
 
 #### エラーレスポンス
 ```
