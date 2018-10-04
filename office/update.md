@@ -20,19 +20,10 @@ curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/
 ```
 
 #### レスポンス
-```
+
 HTTP/1.1 200 OK
 
-{
-  "name" : "サンプル事業所2",
-  "zip" : "123-4567",
-  "prefecture" : "東京都",
-  "address1" : "港区サンプル1-2-3",
-  "address2" : "サンプルビル",
-  "tel" : "03-1234-5678",
-  "fax" : "03-5678-1234"
-}
-```
+[office.json](./responses/office.json)
 
 #### エラーレスポンス
 パラメータ指定方法が誤っている場合
