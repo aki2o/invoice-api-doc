@@ -1,6 +1,6 @@
 ### 送付履歴一覧の取得
 ```
-  GET /api/v1/sent_history.json
+  GET /api/v1/sent_histories.json
 ```
 
 #### パラメーター
@@ -11,7 +11,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" "https://invoice.moneyforward.com/api/v1/sent_history.json?page=1&per_page=10"
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" "https://invoice.moneyforward.com/api/v1/sent_histories.json?page=1&per_page=10"
 ```
 
 #### レスポンス
