@@ -21,9 +21,3 @@ curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" https://invoice.moneyforward.c
 HTTP/1.1 200 OK
 
 [office.json](./responses/office.json)
-
-#### エラーレスポンス
-アクセストークンが不正な場合
-```
-HTTP/1.1 401 Unauthorized
-```

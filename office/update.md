@@ -24,32 +24,3 @@ curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/
 HTTP/1.1 200 OK
 
 [office.json](./responses/office.json)
-
-#### エラーレスポンス
-パラメータ指定方法が誤っている場合
-```
-HTTP/1.1 400 Bad Request
-
-{
-  "code" : "400",
-  "errors" : [
-    {
-      "message" : "必要なパラメーターが存在しない、もしくは空です。"
-    }
-  ]
-}
-```
-
-不正な値があった場合
-```
-HTTP/1.1 400 Bad Request
-
-{
-  "code" : "400",
-  "errors" : [
-    {
-      "message" : "不正な都道府県名が渡されました。"
-    }
-  ]
-}
-```
