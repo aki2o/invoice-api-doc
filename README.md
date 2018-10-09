@@ -6,9 +6,10 @@
 |version|link|
 |:--:|:--:|
 |v1|https://github.com/nishisuke/invoice-api-doc/tree/v1|
-|v2|[here](https://github.com/nishisuke/invoice-api-doc/)|
+|v2|[here](https://github.com/moneyforward/invoice-api-doc/)|
 
-TODO: replace nishisuke to mf
+## format
+v2のレスポンスは[jsonapi](http://jsonapi.org/format/)に従っています。
 
 ## リソース
 - [事業所](/office)
@@ -23,12 +24,14 @@ TODO: replace nishisuke to mf
 ## プランごとの利用制限について
 どのプランでも下記制限の中でAPIを利用することができます。
 
-| プラン     | 請求書作成リクエスト上限 |
+| プラン     | 各帳票作成リクエスト上限 |
 | :--        | --:                      |
 | Free       | 100                      |
 | Basic      | 100                      |
 | Pro        | なし                     |
 | Enterprise | なし                     |
+
+* その他、取引先登録数や郵送の可否等は通常のプランごとの制限と同様* となります。
 
 ## 認証について
 アプリケーションの認証はOAuth2.0のAuthorization Code Grantにもとづいて行います。
@@ -59,10 +62,6 @@ curl -d client_id=[CLIENT_ID] -d client_secret=[CLIENT_SECRET] -d redirect_uri=[
 
 発行されたアクセストークンの有効期限は、30日間です。
 期限切れアクセストークンの再発行については[MFクラウド請求書API スタートアップガイド](https://support.biz.moneyforward.com/invoice/guide/api-guide/a01.html)に記載していますのでそちらをご覧ください。
-
-## アクセス数の制限について
-* Basicプラン以下のプランをご利用の場合、月のAPI経由での請求書作成数を100件までとさせていただきます。
-* その他、取引先登録数や郵送の可否等は通常のプランごとの制限と同様* となります。
 
 ## クライアントライブラリ
 
