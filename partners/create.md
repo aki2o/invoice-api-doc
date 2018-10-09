@@ -39,11 +39,10 @@ HTTP/1.1 201 Created
 HTTP/1.1 422 Unprocessable Entity
 
 {
-  "code" : "422",
-  "errors" : [
-    {
-      "message" : "バリデーションに失敗しました。 名称を入力してください。"
-    }
-  ]
+  "errors": {
+    "status": "422",
+    "title": "Unprocessable entity",
+    "detail": "保存に失敗しました。 名称を入力してください。"
+  }
 }
 ```
