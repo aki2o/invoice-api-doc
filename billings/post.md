@@ -22,11 +22,10 @@ HTTP/1.1 200 OK
 HTTP/1.1 400 Bad Request
 
 {
-  "code" : "400",
-  "errors" : [
-    {
-      "message" : "既に郵送済みです"
-    }
-  ]
+  "errors": {
+    "status": "400",
+    "title": "Bad request",
+    "detail": "既に郵送済みです"
+  }
 }
 ```

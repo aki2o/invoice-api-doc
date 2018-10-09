@@ -1,6 +1,6 @@
 ### 請求書の郵送キャンセル
 ```
-  POST /api/v1/billings/:id/cancel_posting
+  DELETE /api/v1/billings/:id/posting
 ```
 
 #### パラメーター
@@ -8,7 +8,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '' -X POST https://invoice.moneyforward.com/api/v1/billings/ABCDEFGHIJKLMNOPQRST123/cancel_posting
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '' -X DELETE https://invoice.moneyforward.com/api/v1/billings/ABCDEFGHIJKLMNOPQRST123/posting
 ```
 
 #### レスポンス
