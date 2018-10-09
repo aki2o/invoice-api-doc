@@ -27,11 +27,10 @@ HTTP/1.1 201 Created
 #### エラーレスポンス
 ```
 {
-  "code" : "402",
-  "errors" : [
-    {
-      "message" : "名前を入力してください"
-    }
-  ]
+  "errors": {
+    "status": "422",
+      "title": "Unprocessable entity",
+      "detail": "保存に失敗しました。 品名を入力してください。"
+  }
 }
 ```

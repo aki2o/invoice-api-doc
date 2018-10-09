@@ -23,18 +23,3 @@ curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/
 HTTP/1.1 200 OK
 
 [item.json](./responses/item.json)
-
-#### エラーレスポンス
-IDが不正である場合
-```
-HTTP/1.1 404 Not Found
-
-{
-  "code" : "404",
-  "errors" : [
-    {
-      "message" : "存在しないIDが渡されました。"
-    }
-  ]
-}
-```
