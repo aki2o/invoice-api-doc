@@ -1,6 +1,6 @@
 ### 取引先の作成
 ```
-  POST /api/v1/partners
+  POST /api/v2/partners
 ```
 
 #### パラメーター
@@ -24,7 +24,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "partner" : { "name" : "サンプル取引先", "code" : "ABCD-00001" }}' -X POST https://invoice.moneyforward.com/api/v1/partners
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "partner" : { "name" : "サンプル取引先", "code" : "ABCD-00001" }}' -X POST https://invoice.moneyforward.com/api/v2/partners
 ```
 
 #### レスポンス

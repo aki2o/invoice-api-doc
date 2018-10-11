@@ -1,6 +1,6 @@
 ### 取引先の削除
 ```
-  DELETE /api/v1/partners/:id
+  DELETE /api/v2/partners/:id
 ```
 
 #### パラメーター
@@ -8,7 +8,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -X DELETE https://invoice.moneyforward.com/api/v1/partners/ABCDEFGHIJKLMNOPQRST123
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -X DELETE https://invoice.moneyforward.com/api/v2/partners/ABCDEFGHIJKLMNOPQRST123
 ```
 
 #### レスポンス

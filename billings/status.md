@@ -1,6 +1,6 @@
 ### 請求書の入金ステータスの更新
 ```
-  PATCH /api/v1/billings/:id/payment_status
+  PATCH /api/v2/billings/:id/payment_status
 ```
 #### パラメーター
 | 名称           | field                   | 必須 or 任意 | 備考                                        |
@@ -9,7 +9,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "billing" : { "payment_status" : "0"} }' -X PATCH https://invoice.moneyforward.com/api/v1/billings/ABCDEFGHIJKLMNOPQRST123/payment_status
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "billing" : { "payment_status" : "0"} }' -X PATCH https://invoice.moneyforward.com/api/v2/billings/ABCDEFGHIJKLMNOPQRST123/payment_status
 ```
 
 #### レスポンス

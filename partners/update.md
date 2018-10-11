@@ -1,6 +1,6 @@
 ### 取引先の更新
 ```
-  PATCH /api/v1/partners/:id
+  PATCH /api/v2/partners/:id
 ```
 
 #### パラメーター
@@ -25,7 +25,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "partner" : { "name" : "サンプル取引先2" }}' -X PATCH https://invoice.moneyforward.com/api/v1/partners/ABCDEFGHIJKLMNOPQRST123
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "partner" : { "name" : "サンプル取引先2" }}' -X PATCH https://invoice.moneyforward.com/api/v2/partners/ABCDEFGHIJKLMNOPQRST123
 ```
 
 #### レスポンス

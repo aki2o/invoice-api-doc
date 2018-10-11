@@ -1,6 +1,6 @@
 ### 請求書の作成
 ```
-  POST /api/v1/billings
+  POST /api/v2/billings
 ```
 
 #### パラメーター
@@ -34,7 +34,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "billing" : { "department_id" : "DEPARTMENT_ID" }}' -X POST https://invoice.moneyforward.com/api/v1/billings
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "billing" : { "department_id" : "DEPARTMENT_ID" }}' -X POST https://invoice.moneyforward.com/api/v2/billings
 
 # 品目を含むリクエスト
 curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" \
@@ -55,7 +55,7 @@ curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/
       ]
   }
 } '
--X POST https://invoice.moneyforward.com/api/v1/billings
+-X POST https://invoice.moneyforward.com/api/v2/billings
 
 # タグを含むリクエスト
 curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" \
@@ -73,7 +73,7 @@ curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/
     "tags" : "tag1,tag2" # カンマ区切り文字列で入力
   }
 } '
--X POST https://invoice.moneyforward.com/api/v1/billings
+-X POST https://invoice.moneyforward.com/api/v2/billings
 ```
 #### レスポンス
 

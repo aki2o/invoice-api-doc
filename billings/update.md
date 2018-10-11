@@ -1,6 +1,6 @@
 ### 請求書の更新
 ```
-  PATCH /api/v1/billings/:id
+  PATCH /api/v2/billings/:id
 ```
 #### パラメーター
 | 名称         | field                      | 備考 |
@@ -33,7 +33,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "billing" : { "title" : "件名サンプル" }}' -X PATCH https://invoice.moneyforward.com/api/v1/billings/ABCDEFGHIJKLMNOPQRST123
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "billing" : { "title" : "件名サンプル" }}' -X PATCH https://invoice.moneyforward.com/api/v2/billings/ABCDEFGHIJKLMNOPQRST123
 
 # 品目を含むリクエスト
 curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" \
@@ -63,7 +63,7 @@ curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/
       ]
   }
 } '
--X PATCH https://invoice.moneyforward.com/api/v1/billings/"更新する請求書ID"
+-X PATCH https://invoice.moneyforward.com/api/v2/billings/"更新する請求書ID"
 ```
 
 #### レスポンス

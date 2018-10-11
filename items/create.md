@@ -1,6 +1,6 @@
 ### 品目の作成
 ```
-  POST /api/v1/items
+  POST /api/v2/items
 ```
 
 #### パラメーター
@@ -16,7 +16,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "item" : { "name" : "サンプル商品" }}' -X POST https://invoice.moneyforward.com/api/v1/items
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "item" : { "name" : "サンプル商品" }}' -X POST https://invoice.moneyforward.com/api/v2/items
 ```
 
 #### レスポンス

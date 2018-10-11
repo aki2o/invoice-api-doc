@@ -1,6 +1,6 @@
 ### 請求書一覧の検索
 ```
-  GET /api/v1/billings/search.json
+  GET /api/v2/billings/search.json
 ```
 
 #### パラメーター
@@ -15,7 +15,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" "https://invoice.moneyforward.com/api/v1/billings/search.json?q=hoge&range_key=created_at&from=2015-10-01&to=2015-10-31"
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" "https://invoice.moneyforward.com/api/v2/billings/search.json?q=hoge&range_key=created_at&from=2015-10-01&to=2015-10-31"
 ```
 
 #### レスポンス

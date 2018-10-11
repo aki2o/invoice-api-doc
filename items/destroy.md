@@ -1,6 +1,6 @@
 ### 品目の削除
 ```
-  DELETE /api/v1/items/:id
+  DELETE /api/v2/items/:id
 ```
 
 #### パラメーター
@@ -8,7 +8,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -X DELETE https://invoice.moneyforward.com/api/v1/items/ABCDEFGHIJKLMNOPQRST123
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -X DELETE https://invoice.moneyforward.com/api/v2/items/ABCDEFGHIJKLMNOPQRST123
 ```
 
 #### レスポンス

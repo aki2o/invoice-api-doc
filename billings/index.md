@@ -1,6 +1,6 @@
 ### 請求書一覧の取得
 ```
-  GET /api/v1/billings.json
+  GET /api/v2/billings.json
 ```
 
 #### パラメーター
@@ -11,7 +11,7 @@
 
 #### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" "https://invoice.moneyforward.com/api/v1/billings.json?page=1&per_page=10"
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" "https://invoice.moneyforward.com/api/v2/billings.json?page=1&per_page=10"
 ```
 
 #### レスポンス

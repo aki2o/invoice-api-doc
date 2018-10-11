@@ -1,11 +1,11 @@
 ### エンドポイント
 ```
-  /api/v1/office
+  /api/v2/office
 ```
 ### 事業所情報の取得
 
 ```
-  GET /api/v1/office.json
+  GET /api/v2/office.json
 ```
 
 #### パラメーター
@@ -13,7 +13,7 @@
 
 ### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" https://invoice.moneyforward.com/api/v1/office.json
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" https://invoice.moneyforward.com/api/v2/office.json
 ```
 
 #### レスポンス

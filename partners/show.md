@@ -1,6 +1,6 @@
 ### 取引先の取得
 ```
-  GET /api/v1/partners/:id.json
+  GET /api/v2/partners/:id.json
 ```
 
 #### パラメーター
@@ -8,7 +8,7 @@
 
 ### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" https://invoice.moneyforward.com/api/v1/partners/ABCDEFGHIJKLMNOPQRST123.json
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" https://invoice.moneyforward.com/api/v2/partners/ABCDEFGHIJKLMNOPQRST123.json
 ```
 
 #### レスポンス

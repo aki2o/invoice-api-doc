@@ -1,6 +1,6 @@
 ### 事業所情報の編集
 ```
-  PATCH /api/v1/office
+  PATCH /api/v2/office
 ```
 
 #### パラメーター
@@ -16,7 +16,7 @@
 
 ### リクエスト例
 ```
-curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "office" : {"name" : "サンプル事業所2"} }' -X PATCH https://invoice.moneyforward.com/api/v1/office
+curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/json" -d '{ "office" : {"name" : "サンプル事業所2"} }' -X PATCH https://invoice.moneyforward.com/api/v2/office
 ```
 
 #### レスポンス
