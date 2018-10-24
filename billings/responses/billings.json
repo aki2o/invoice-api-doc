@@ -52,7 +52,7 @@
   "included": [
     {
       "id": "eo1kD48RHEWpoXTgTZVUAQ",
-      "type": "item",
+      "type": "billing_item",
       "attributes": {
 	"item_code": null,
 	"name": null,
