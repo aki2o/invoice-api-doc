@@ -24,7 +24,7 @@ curl "https://invoice.moneyforward.com/api/v2/quotes/asdfghjkl.pdf" -H "Authoriz
 ##### success
 HTTP/1.1 200 OK
 
-[quote.json](/responses/quote.json)
+[quote.json](./responses/quote.json)
 
 ##### failure
 ```

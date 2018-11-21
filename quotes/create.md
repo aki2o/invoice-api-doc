@@ -59,7 +59,7 @@ curl -X POST "https://invoice.moneyforward.com/api/v2/quotes.json" -H "Authoriza
 ##### success
 HTTP/1.1 200 OK
 
-[quote.json](/responses/quote.json)
+[quote.json](./responses/quote.json)
 
 ##### failure
 HTTP/1.1 400 Bad Request

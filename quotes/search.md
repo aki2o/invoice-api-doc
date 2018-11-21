@@ -29,7 +29,7 @@ curl "https://invoice.moneyforward.com/api/v2/quotes/search.json?q=hoge&range[ke
 ##### success
 HTTP/1.1 200 OK
 
-[quotes.json](/responses/quotes.json)
+[quotes.json](./responses/quotes.json)
 
 ##### failure
 HTTP/1.1 400 Bad Request

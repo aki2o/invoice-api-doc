@@ -25,7 +25,7 @@ curl "https://invoice.moneyforward.com/api/v2/quotes.json?page=2&per_page=10" -H
 ##### success
 HTTP/1.1 200 OK
 
-[quotes.json](/responses/quotes.json)
+[quotes.json](./responses/quotes.json)
 
 ##### failure
 HTTP/1.1 400 Bad Request
