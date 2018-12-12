@@ -50,14 +50,14 @@ curl -i -H "Authorization: BEARER [ACCESS_TOKEN]" -H "Content-Type: application/
         },
         # itemの更新(idあり)
         {
-          "id" : "ABCDEFGHIJKLMNOPQRST012"
+          "id" : "ABCDEFGHIJKLMNOPQRST012",
           "name" : "商品B",
           "quantity" : "1",
           "unit_price" : "100"
         },
         # itemの更新(削除)
         {
-          "id" : "ABCDEFGHIJKLMNOPQRST012"
+          "id" : "ABCDEFGHIJKLMNOPQRST012",
           "_destroy" : true
         },
       ]
