@@ -25,7 +25,7 @@ PATCH  /api/v2/quotes/:id.json
 | quote[items][0][unit_price] | int  |         |              | no   |                                              |
 | quote[items][0][quantity]   | int  |         |              | no   |                                              |
 | quote[items][0][detail]     | str  |         |              | no   |                                              |
-| quote[items][0][excise]     | bool |         |              | no   |                                              |
+| quote[items][0][is_excise]  | bool |         |              | no   |                                              |
 | quote[items][0][code]       | str  |         |              | no   | 登録済の品目を追加する場合に指定。           |
 | quote[items][0][_destroy]   | bool |         |              | no   | 品目を削除する場合指定。                     |
 

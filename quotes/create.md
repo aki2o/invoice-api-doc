@@ -30,7 +30,7 @@ POST   /api/v2/quotes.json
 | quote[items][0][unit_price] | int  |         |              | no   |                                |
 | quote[items][0][quantity]   | int  |         |              | no   |                                |
 | quote[items][0][detail]     | str  |         |              | no   |                                |
-| quote[items][0][excise]     | bool |         |              | no   |                                |
+| quote[items][0][is_excise]  | bool |         |              | no   |                                |
 | quote[items][0][code]       | str  |         |              | no   | 登録済の品目を使う場合に指定。 |
 
 #### curl
