@@ -32,7 +32,7 @@ PATCH  /api/v2/quotes/:id.json
 #### curl
 
 ```
-curl -X PATCH "https://invoice.moneyforward.com/api/v2/quotes/asdfghjkl.json" -H "Authorization: BEARER {{TOKEN}}" \
+curl -X PATCH "https://invoice.moneyforward.com/api/v2/quotes/asdfghjkl.json" -H "Authorization: BEARER {{TOKEN}}" -H "Content-Type: application/json" \
 -d '
 {
   "quote": {

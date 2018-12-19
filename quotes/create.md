@@ -36,7 +36,7 @@ POST   /api/v2/quotes.json
 #### curl
 
 ```
-curl -X POST "https://invoice.moneyforward.com/api/v2/quotes.json" -H "Authorization: BEARER {{TOKEN}}" \
+curl -X POST "https://invoice.moneyforward.com/api/v2/quotes.json" -H "Authorization: BEARER {{TOKEN}}" -H "Content-Type: application/json" \
 -d '
 {
   "quote": {
