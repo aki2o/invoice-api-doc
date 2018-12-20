@@ -12,7 +12,6 @@ POST   /api/v2/quotes.json
 | Free       | 月100件まで              |
 | Basic      | 月100件まで              |
 | Pro        | なし                     |
-| Enterprise | なし                     |
 
 #### params
 

@@ -29,7 +29,6 @@ v2のレスポンスは[jsonapi](http://jsonapi.org/format/)に従っていま�
 | Free       | 100                      |
 | Basic      | 100                      |
 | Pro        | なし                     |
-| Enterprise | なし                     |
 
 * その他、取引先登録数や郵送の可否等は通常のプランごとの制限と同様* となります。
 
