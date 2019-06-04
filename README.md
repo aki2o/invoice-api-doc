@@ -76,3 +76,11 @@ curl -d client_id=[CLIENT_ID] -d client_secret=[CLIENT_SECRET] -d redirect_uri=[
 ## クライアントライブラリ
 
 * [Ruby](https://github.com/moneyforward/mf_cloud-invoice-ruby)
+
+## 本APIに関するお問い合わせについて
+
+本APIに関するお問い合わせは、以下メールアドレスにお問い合わせください。
+
+お問い合わせ先メールアドレス: invoice.feedback@moneyforward.com
+
+※17時までに受付したお問い合わせにつきましては、可能な限り、当日中でのご返信いたしますが、翌営業日以降のご返信となる場合がございます。
