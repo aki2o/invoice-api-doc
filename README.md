@@ -1,25 +1,11 @@
 # マネーフォワード クラウド請求書APIドキュメント
-このページは **v2** のドキュメントです。
 
 ## バージョン
 
 |version|link|
 |:--:|:--:|
 |v1|https://github.com/moneyforward/invoice-api-doc/tree/v1|
-|v2|[here](https://github.com/moneyforward/invoice-api-doc/)|
-
-## format
-v2のレスポンスは[jsonapi](http://jsonapi.org/format/)に従っています。
-
-## リソース
-- [事業所](/office)
-- [取引先](/partners)
-- [品目](/items)
-- [請求書](/billings)
-- [送付履歴](/sent_histories)
-- [見積書](/quotes)
-
-＊ *見積書はv2から利用可能になりました。*
+|v2|https://github.com/moneyforward/invoice-api-doc/tree/v2|
 
 ## プランごとの利用制限について
 どのプランでも下記制限の中でAPIを利用することができます。
