@@ -1,11 +1,11 @@
-# MFクラウド請求書APIドキュメント
+# マネーフォワード クラウド請求書APIドキュメント
 このページは **v2** のドキュメントです。
 
 ## バージョン
 
 |version|link|
 |:--:|:--:|
-|v1|https://github.com/nishisuke/invoice-api-doc/tree/v1|
+|v1|https://github.com/moneyforward/invoice-api-doc/tree/v1|
 |v2|[here](https://github.com/moneyforward/invoice-api-doc/)|
 
 ## format
@@ -26,10 +26,20 @@ v2のレスポンスは[jsonapi](http://jsonapi.org/format/)に従っていま�
 
 | プラン     | 各帳票作成リクエスト上限 |
 | :--        | --:                      |
-| Free       | 100                      |
-| Basic      | 100                      |
-| Pro        | なし                     |
-| Enterprise | なし                     |
+| フリー     | 100                      |
+| ベーシック | 100                      |
+| プロ       | なし                     |
+
+[プラン体系変更](https://support.biz.moneyforward.com/valuepack/news/important/i000.html)後の利用制限は下記になります。
+
+| 事業所区分 | プラン           | 各帳票作成リクエスト上限 |
+| :--        | :--              | --:                      |
+|            | フリー           | 100                      |
+| 個人       | パーソナルライト | 100                      |
+| 個人       | パーソナル       | なし                     |
+| 個人       | パーソナルプラス | なし                     |
+| 法人       | スモールビジネス | 100                      |
+| 法人       | ビジネス         | なし                     |
 
 * その他、取引先登録数や郵送の可否等は通常のプランごとの制限と同様* となります。
 
@@ -66,3 +76,11 @@ curl -d client_id=[CLIENT_ID] -d client_secret=[CLIENT_SECRET] -d redirect_uri=[
 ## クライアントライブラリ
 
 * [Ruby](https://github.com/moneyforward/mf_cloud-invoice-ruby)
+
+## 本APIに関するお問い合わせについて
+
+本APIに関するお問い合わせは、以下メールアドレスにお問い合わせください。
+
+お問い合わせ先メールアドレス: invoice.feedback@moneyforward.com
+
+※17時までに受付したお問い合わせにつきましては、可能な限り、当日中でのご返信いたしますが、翌営業日以降のご返信となる場合がございます。

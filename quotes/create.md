@@ -9,10 +9,20 @@ POST   /api/v2/quotes.json
 
 | プラン     | 見積書作成リクエスト上限 |
 | :--        | --:                      |
-| Free       | 月100件まで              |
-| Basic      | 月100件まで              |
-| Pro        | なし                     |
-| Enterprise | なし                     |
+| フリー     | 月100件まで              |
+| ベーシック | 月100件まで              |
+| プロ       | なし                     |
+
+[プラン体系変更](https://support.biz.moneyforward.com/valuepack/news/important/i000.html)後のリクエスト上限は下記になります。
+
+| 事業所区分 | プラン           | 見積書作成リクエスト上限 |
+| :--        | :--              | --:                      |
+|            | フリー           | 月100件まで              |
+| 個人       | パーソナルライト | 月100件まで              |
+| 個人       | パーソナル       | なし                     |
+| 個人       | パーソナルプラス | なし                     |
+| 法人       | スモールビジネス | 月100件まで              |
+| 法人       | ビジネス         | なし                     |
 
 #### params
 
@@ -30,13 +40,13 @@ POST   /api/v2/quotes.json
 | quote[items][0][unit_price] | int  |         |              | no   |                                |
 | quote[items][0][quantity]   | int  |         |              | no   |                                |
 | quote[items][0][detail]     | str  |         |              | no   |                                |
-| quote[items][0][excise]     | bool |         |              | no   |                                |
+| quote[items][0][is_excise]  | bool |         |              | no   |                                |
 | quote[items][0][code]       | str  |         |              | no   | 登録済の品目を使う場合に指定。 |
 
 #### curl
 
 ```
-curl -X POST "https://invoice.moneyforward.com/api/v2/quotes.json" -H "Authorization: BEARER {{TOKEN}}" \
+curl -X POST "https://invoice.moneyforward.com/api/v2/quotes.json" -H "Authorization: BEARER {{TOKEN}}" -H "Content-Type: application/json" \
 -d '
 {
   "quote": {
